@@ -110,7 +110,8 @@ public class result extends AppCompatActivity {
             if (ing.containsAll(i.subList(1,i.size()))) {
                     Map<String, String> datum = new HashMap<String,String>(2);
                     datum.put("name", i.get(0).toString());
-                    datum.put("ing", i.subList(1,i.size()).toString());
+                    String temp = i.subList(1,i.size()).toString();
+                    datum.put("ing", temp.substring(1,temp.length()-1));
                     data.add(datum);
                 }
             }
