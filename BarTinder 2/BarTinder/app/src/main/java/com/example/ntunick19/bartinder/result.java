@@ -8,11 +8,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class result extends AppCompatActivity {
 
@@ -27,38 +30,27 @@ public class result extends AppCompatActivity {
         ArrayList<String> alc = getIntent().getExtras().getStringArrayList(selection.ALCOHOL);
         ArrayList<String> mxr = getIntent().getExtras().getStringArrayList(selection.MIXERS);
 
-        ArrayList<String> results = get_Results(mxr, alc);
+        List<Map<String, String>> results = get_Results(mxr, alc);
         ListView lv = (ListView) findViewById(R.id.results_list);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
-                this,
-                android.R.layout.simple_list_item_1,
-                results);
-        lv.setAdapter(arrayAdapter);
+
+        SimpleAdapter adapter = new SimpleAdapter(this, results,
+                android.R.layout.simple_list_item_2,
+                new String[] {"name", "ing"},
+                new int[] {android.R.id.text1,
+                        android.R.id.text2});
+
+        lv.setAdapter(adapter);
+
+        mxr.removeAll(mxr);
+        alc.removeAll(alc);
     }
 
-    public ArrayList<String> get_Results(ArrayList<String> mixers, ArrayList<String> alcohol){
+    public List<Map<String, String>> get_Results(ArrayList<String> mixers, ArrayList<String> alcohol){
         ArrayList<String> ing = new ArrayList<String>();
         ArrayList<String> results = new ArrayList<String>();
+        ArrayList<String> ing_list =  new ArrayList<String>();
         ArrayList<List<String>> recipes = new ArrayList<List<String>>();
-        ArrayList<String> drink_Names = new ArrayList<String>();
-        drink_Names.add("Gin and Tonic");
-        drink_Names.add("A Bad Decision");
-        drink_Names.add("Gin and Tonic");
-        drink_Names.add("Gin and Tonic");
-        drink_Names.add("Gin and Tonic");
-        drink_Names.add("Gin and Tonic");
-        drink_Names.add("Gin and Tonic");
-        drink_Names.add("Gin and Tonic");
-        drink_Names.add("Gin and Tonic");
-        drink_Names.add("Gin and Tonic");
-        drink_Names.add("Gin and Tonic");
-        drink_Names.add("Gin and Tonic");
-        drink_Names.add("Gin and Tonic");
-        drink_Names.add("Gin and Tonic");
-        drink_Names.add("Gin and Tonic");
-        drink_Names.add("Gin and Tonic");
-        drink_Names.add("Gin and Tonic");
-        drink_Names.add("Gin and Tonic");
+        List<Map<String, String>> data = new ArrayList<Map<String, String>>();
 
         ing.addAll(mixers);
         ing.addAll(alcohol);
@@ -116,11 +108,21 @@ public class result extends AppCompatActivity {
 
         for(List i : recipes) {
             if (ing.containsAll(i.subList(1,i.size()))) {
-                    results.add(i.get(0).toString());
+                    Map<String, String> datum = new HashMap<String,String>(2);
+                    datum.put("name", i.get(0).toString());
+                    datum.put("ing", i.subList(1,i.size()).toString());
+                    data.add(datum);
                 }
             }
 
-        return results;
+        if(data.isEmpty()){
+            Map<String, String> datum = new HashMap<String,String>(2);
+            datum.put("name", "Sorry! No matches were found.");
+            datum.put("ing", "Please try again.");
+            data.add(datum);
+        }
+
+        return data;
     }
 
 }

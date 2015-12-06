@@ -13,35 +13,55 @@
     tools:showIn="@layout/activity_main"
     android:background="#ffffff">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Deutschland Destructors"
-        android:id="@+id/textView"
-        android:layout_marginBottom="45dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start"
         android:id="@+id/start_button"
         android:onClick="startClick"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="26dp"
+        android:textSize="36dp"
         android:textAppearance="@android:style/TextAppearance.Holo"
-        style="@style/Base.TextAppearance.AppCompat.Widget.Button" />
+        style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+        android:singleLine="false"
+        android:layout_above="@+id/checkBox"
+        android:layout_centerHorizontal="true" />
+
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="I am 21 years of age or older"
+        android:text="I am 21 years of age or older."
         android:id="@+id/checkBox"
-        android:layout_marginTop="61dp"
         android:checked="false"
-        android:layout_below="@+id/start_button"
+        android:textSize="18dp"
+        android:layout_above="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="59dp" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/imageView2"
+        android:src="@drawable/dd_logo"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView3"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:src="@drawable/bt_logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Please Drink Responsibly."
+        android:id="@+id/textView2"
+        android:layout_alignTop="@+id/imageView2"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

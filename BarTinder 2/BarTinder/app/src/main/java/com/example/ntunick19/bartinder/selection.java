@@ -58,7 +58,11 @@ public class selection extends AppCompatActivity implements OnClickListener{
         Intent resultActivity = new Intent(selection.this, result.class);
         resultActivity.putExtra(ALCOHOL, alcohol_list);
         resultActivity.putExtra(MIXERS, mixer_list);
+
         startActivity(resultActivity);
+
+        demoA.list.clear();
+        demoM.list.clear();
     }
 
     public void selectAlcohol(View v)
