@@ -10,65 +10,72 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.ntunick19.bartinder.selection"
-    tools:showIn="@layout/activity_selection">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Select Your Drinks"
-        android:id="@+id/textView2"
-        android:layout_marginTop="77dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:textSize="36dp"
-        android:singleLine="false"
-        android:password="false"
-        android:phoneNumber="false" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Deutschland Destructors"
-        android:id="@+id/textView3"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="43dp" />
+    tools:showIn="@layout/activity_selection"
+    android:background="@color/background">
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Alcohol"
         android:id="@+id/alcohol_button"
-        android:layout_marginTop="61dp"
-        android:layout_below="@+id/textView2"
         android:onClick="selectAlcohol"
-        android:layout_alignEnd="@+id/mix_button"
-        android:layout_alignStart="@+id/mix_button"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:textSize="18dp" />
+        android:textSize="18dp"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:textAlignment="center"
+        android:layout_above="@+id/mixers_button"
+        android:layout_alignStart="@+id/mixers_button" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Mixers"
         android:id="@+id/mixers_button"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:onClick="selectMixers"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:textSize="18dp" />
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:textSize="18dp"
+        style="@style/Base.Widget.AppCompat.Button.Colored" />
     
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mix it up!"
         android:id="@+id/mix_button"
-        android:layout_above="@+id/textView3"
+        android:textSize="36dp"
+        style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_below="@+id/mixers_button"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="68dp" />
+        android:layout_marginTop="44dp" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/dd_logo"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Select your drinks!"
+        android:id="@+id/textView"
+        android:typeface="sans"
+        android:textSize="26dp"
+        android:layout_above="@+id/alcohol_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="1dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView3"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:src="@drawable/bt_logo" />
 
 </RelativeLayout>

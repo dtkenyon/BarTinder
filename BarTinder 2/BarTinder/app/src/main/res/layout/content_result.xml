@@ -10,7 +10,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.ntunick19.bartinder.result"
-    tools:showIn="@layout/activity_result">
+    tools:showIn="@layout/activity_result"
+    android:background="@color/background">
 
     <TextView
         android:layout_width="wrap_content"

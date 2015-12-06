@@ -27,7 +27,6 @@ public class mixers extends DialogFragment
             public void onClick(DialogInterface dialog, int which, boolean isChecked) {
                 if(isChecked){
                     list.add(items[which]);
-
                 }
                 else if(list.contains(items[which])){
                     list.remove(items[which]);
