@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="my_mixer_selection">
+
+        <item>Apple Cider</item>
+        <item>Blue Gatorade</item>
+        <item>Coca Cola</item>
+        <item>Coconut Cream</item>
+        <item>Cranberry Juice</item>
+        <item>Cream</item>
+        <item>Ginger Ale</item>
+        <item>Grenadine</item>
+        <item>Heavy Cream</item>
+        <item>Lemon Juice</item>
+        <item>Lime Juice</item>
+        <item>Margarita Mix</item>
+        <item>Orange Juice</item>
+        <item>Pineapple Juice</item>
+        <item>Red Bull</item>
+        <item>Sour Mix</item>
+        <item>Sprite</item>
+        <item>Tonic</item>
+
+    </string-array>
+
+</resources>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="GinandTonic">
+        <item>Gin and Tonic</item>
+        <item>Gin</item>
+        <item>Tonic</item>
+    </string-array>
+
+    <string-array name="WhiskeySour">
+        <item>Whiskey Sours</item>
+        <item>Whiskey</item>
+        <item>Sour Mix</item>
+    </string-array>
+
+    <string-array name="AlabamaSlammer">
+        <item>Alabama Slammer</item>
+        <item>Vodka</item>
+        <item>Southern Comfort</item>
+        <item>Amaretto</item>
+        <item>Gin</item>
+        <item>Orange Juice</item>
+    </string-array>
+
+    <string-array name="BayBreeze">
+        <item>Bay Breeze</item>
+        <item>Vodka</item>
+        <item>Cranberry Juice</item>
+        <item>Pineapple Juice</item>
+    </string-array>
+
+    <string-array name="CubeLibre">
+        <item>Cube Libre</item>
+        <item>Rum</item>
+        <item>Coca Cola</item>
+    </string-array>
+
+    <string-array name="DarkandStormy">
+        <item>Dark and Stormy</item>
+        <item>Rum</item>
+        <item>Ginger Beer</item>
+    </string-array>
+
+    <string-array name="GinBuck">
+        <item>Gin Buck</item>
+        <item>Gin</item>
+        <item>Ginger Ale</item>
+    </string-array>
+
+    <string-array name="Screwdriver">
+        <item>Screwdriver</item>
+        <item>Vodka</item>
+        <item>Orange Juice</item>
+    </string-array>
+
+    <string-array name="ABadDecision">
+        <item>A Bad Decision</item>
+        <item>Pinaccle Whipped (Vodka)</item>
+        <item>Blue Gatorade</item>
+    </string-array>
+
+    <string-array name="CapnnCoke">
+        <item>Captain and Coke</item>
+        <item>Captain Morgan</item>
+        <item>Coca Cola</item>
+    </string-array>
+
+    <string-array name="RonSwanson">
+        <item>The Ron Swanson</item>
+        <item>Scotch</item>
+    </string-array>
+
+    <string-array name="Jagerbomb">
+        <item>Jagerbomb</item>
+        <item>Jagermeister</item>
+        <item>Red Bull</item>
+    </string-array>
+
+    <string-array name="FireCider">
+        <item>Fire Cider (by Ming)</item>
+        <item>Fireball</item>
+        <item>Apple Cider</item>
+    </string-array>
+
+    <string-array name="TequilaSunrise">
+        <item>Tequila Sunreise</item>
+        <item>Tequila</item>
+        <item>Orange Juice</item>
+        <item>Grenadine</item>
+    </string-array>
+
+    <string-array name="Highball">
+        <item>Highball</item>
+        <item>Whiskey</item>
+        <item>Ginger Ale</item>
+    </string-array>
+
+    <string-array name="OhCaptainMyCaptain">
+        <item>Oh Captain, My Captain!</item>
+        <item>Captain Morgan</item>
+        <item>Sprite</item>
+    </string-array>
+
+    <string-array name="CranberryVodka">
+        <item>Cranberry Vodka</item>
+        <item>Vodka</item>
+        <item>Cranberry Juice</item>
+    </string-array>
+
+    <string-array name="WhiteRussian">
+        <item>White Russian</item>
+        <item>Vodka</item>
+        <item>Khalua</item>
+        <item>Cream</item>
+    </string-array>
+
+    <string-array name="Margarita">
+        <item>Margarita</item>
+        <item>Tequila</item>
+        <item>Margarita Mix</item>
+    </string-array>
+
+    <string-array name="LongIslandIcedTea">
+        <item>Long Island Iced Tea</item>
+        <item>Vodka</item>
+        <item>Gin</item>
+        <item>Tequila</item>
+        <item>Rum</item>
+        <item>Triple Sec</item>
+        <item>Coca Cola</item>
+    </string-array>
+
+    <string-array name="SurferonAcid">
+        <item>Surfer on Acid</item>
+        <item>Coconut Rum</item>
+        <item>Jäger</item>
+        <item>Pineapple Juice</item>
+    </string-array>
+
+    <string-array name="WooWoo">
+        <item>Woo Woo!</item>
+        <item>Vodka</item>
+        <item>Peach Schnapps</item>
+        <item>Cranberry Juice</item>
+    </string-array>
+
+    <string-array name="SwimmingPool">
+        <item>Swimming Pool</item>
+        <item>Rum</item>
+        <item>Vodka</item>
+        <item>Pineapple Juice</item>
+        <item>Coconut Cream</item>
+        <item>Heavy Cream</item>
+        <item>Curaçao</item>
+    </string-array>
+
+    <string-array name="GinBucket">
+        <item>Gin Bucket</item>
+        <item>Gin</item>
+        <item>Sprite</item>
+        <item>Lemon Juice</item>
+        <item>Lime Juice</item>
+    </string-array>
+
+    <string-array name="BetweentheSheets">
+        <item>Between the Sheets</item>
+        <item>Brandy</item>
+        <item>Rum</item>
+        <item>Triple Sec</item>
+        <item>Lemon Juice</item>
+    </string-array>
+
+</resources>

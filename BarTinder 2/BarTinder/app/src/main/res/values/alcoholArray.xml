@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="my_alcohol_selection">
+
+        <item>Armaretto</item>
+        <item>Brandy</item>
+        <item>Captain Morgan</item>
+        <item>Coconut Rum</item>
+        <item>Curaçao</item>
+        <item>Fireball</item>
+        <item>Gin</item>
+        <item>Jagermeister</item>
+        <item>Khalua</item>
+        <item>Peach Schnapps</item>
+        <item>Pinaccle Whipped (Vodka)</item>
+        <item>Rum</item>
+        <item>Scotch</item>
+        <item>Southern Comfort</item>
+        <item>Tequila</item>
+        <item>Triple Sec</item>
+        <item>Vodka</item>
+        <item>Whiskey</item>
+
+    </string-array>
+</resources>
