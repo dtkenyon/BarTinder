@@ -1,16 +1,16 @@
+/*
+BarTinder App by Deutschland Destructors
+Nicole Tunick, Zoe Dickert, Derek Kenyon, John Marcao
+Developed for EC327
+ */
+
 package com.example.ntunick19.bartinder;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -27,34 +27,43 @@ public class result extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // Import the data that we pushed here from the selection activity
         ArrayList<String> alc = getIntent().getExtras().getStringArrayList(selection.ALCOHOL);
         ArrayList<String> mxr = getIntent().getExtras().getStringArrayList(selection.MIXERS);
 
+        //Combine the above data to get results
         List<Map<String, String>> results = get_Results(mxr, alc);
+
+        // Initialize the view
         ListView lv = (ListView) findViewById(R.id.results_list);
 
+        // Create the SimpleAdapter object to display our results
         SimpleAdapter adapter = new SimpleAdapter(this, results,
                 android.R.layout.simple_list_item_2,
                 new String[] {"name", "ing"},
                 new int[] {android.R.id.text1,
                         android.R.id.text2});
 
+        // Connect everything together
         lv.setAdapter(adapter);
-
-        mxr.removeAll(mxr);
-        alc.removeAll(alc);
     }
 
+    // Function to take the user input and produce a list of results.
     public List<Map<String, String>> get_Results(ArrayList<String> mixers, ArrayList<String> alcohol){
-        ArrayList<String> ing = new ArrayList<String>();
-        ArrayList<String> results = new ArrayList<String>();
-        ArrayList<String> ing_list =  new ArrayList<String>();
-        ArrayList<List<String>> recipes = new ArrayList<List<String>>();
-        List<Map<String, String>> data = new ArrayList<Map<String, String>>();
+        // Initialize all our data storage
+        ArrayList<String> ing = new ArrayList<>();
+        ArrayList<List<String>> recipes = new ArrayList<>();
+        List<Map<String, String>> data = new ArrayList<>();
 
+        // Combine all user input into one
         ing.addAll(mixers);
         ing.addAll(alcohol);
 
+        // This is really ugly and I wish I knew a better way to do it.
+        // Goes through the XML file takes all the StringArrays and combines them
+        //     into an ArrayList of Lists of Strings.
+        // In the future, it would be great to just parse the xml and pull the relevant
+        //     data, but this will do for now. Sorry.
         List<String> gt = Arrays.asList(getResources().getStringArray(R.array.GinandTonic));
         recipes.add(gt);
         List<String> abd = Arrays.asList(getResources().getStringArray(R.array.ABadDecision));
@@ -106,17 +115,20 @@ public class result extends AppCompatActivity {
         List<String> aa = Arrays.asList(getResources().getStringArray(R.array.FireCider));
         recipes.add(aa);
 
+        // Checks all the input data against the recipe database to find any matches.
         for(List i : recipes) {
             if (ing.containsAll(i.subList(1,i.size()))) {
-                    Map<String, String> datum = new HashMap<String,String>(2);
-                    datum.put("name", i.get(0).toString());
-                    datum.put("ing", i.subList(1,i.size()).toString());
+                    Map<String, String> datum = new HashMap<>(2); // Create a temp placeholder
+                    datum.put("name", i.get(0).toString()); // Stores the name, which has been assigned to the first index for all drinks
+                    String temp = i.subList(1,i.size()).toString(); // Stores the remainder of the list, designated as ingredients
+                    datum.put("ing", temp.substring(1,temp.length()-1)); // Removes the brackets that come included with the array .toString()
                     data.add(datum);
                 }
             }
 
+        // Creates a fake drink to act as an error message in the list if no matches were found/no ing were selected
         if(data.isEmpty()){
-            Map<String, String> datum = new HashMap<String,String>(2);
+            Map<String, String> datum = new HashMap<>(2);
             datum.put("name", "Sorry! No matches were found.");
             datum.put("ing", "Please try again.");
             data.add(datum);

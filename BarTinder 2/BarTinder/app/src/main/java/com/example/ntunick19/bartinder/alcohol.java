@@ -1,3 +1,9 @@
+/*
+BarTinder App by Deutschland Destructors
+Nicole Tunick, Zoe Dickert, Derek Kenyon, John Marcao
+Developed for EC327
+ */
+
 package com.example.ntunick19.bartinder;
 
 import android.app.AlertDialog;
@@ -12,13 +18,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-
 public class alcohol extends DialogFragment
 {
-    public ArrayList<String> list = new ArrayList<String>();
+    // Create an ArrayList to store the selected drinks
+    public ArrayList<String> list = new ArrayList<>();
     @Override
     @NonNull
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+        // Go to XML file and take all the mixers into an array
         final String[] items = getResources().getStringArray(R.array.my_alcohol_selection);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -26,26 +33,24 @@ public class alcohol extends DialogFragment
             @Override
             public void onClick(DialogInterface dialog, int which, boolean isChecked) {
                 if(isChecked){
-                    list.add(items[which]);
-
+                    list.add(items[which]); // If an item is checked off, add it to the array
                 }
                 else if(list.contains(items[which])){
-                    list.remove(items[which]);
+                    list.remove(items[which]); // If an item is unchecked, remove it from the array
                 }
             }
         }).setPositiveButton("OK", new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String alcoholSelections = "";
+                String alcoholSelections = ""; // Initialize string for display
                 for(String ms : list){
-                    alcoholSelections = alcoholSelections + "\n" +ms;
+                    alcoholSelections = alcoholSelections + "\n" +ms; // Store in string
                 }
+                //Display the selected drinks.
                 Toast.makeText(getActivity(), "Alcohol Selection: "+alcoholSelections, Toast.LENGTH_SHORT).show();
             }
         });
         return builder.create();
-
-
     }
 }
 
