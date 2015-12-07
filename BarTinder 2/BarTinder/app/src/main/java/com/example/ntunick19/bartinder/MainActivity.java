@@ -1,3 +1,9 @@
+/*
+BarTinder App by Deutschland Destructors
+Nicole Tunick, Zoe Dickert, Derek Kenyon, John Marcao
+Developed for EC327
+ */
+
 package com.example.ntunick19.bartinder;
 
 import android.content.Intent;
@@ -14,6 +20,7 @@ import android.widget.CheckBox;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    // Initalize the objects used for User Interaction
     private Button startButton;
     private CheckBox Check1;
 
@@ -31,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    // If the user has clicked the start button, this functions calls the startButtonClick() function
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -44,17 +52,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private void startButtonClick() {
+        // Set up what page to jump to.
         Intent resultActivity = new Intent(MainActivity.this, selection.class);
+
+        // Prevents the user from progressing if they did not confirm their age.
+        // Shows a toast to the user if they do say they are 21.
         if(Check1.isChecked())
         {
             startActivity(resultActivity);
-
         }
         else
         {
             Toast.makeText(MainActivity.this, "Please confirm you are 21 years or older", Toast.LENGTH_SHORT).show();
-
-
         }
     }
 }
