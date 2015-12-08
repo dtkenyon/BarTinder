@@ -117,6 +117,8 @@ public class result extends AppCompatActivity {
 
         // Checks all the input data against the recipe database to find any matches.
         for(List i : recipes) {
+            ArrayList<String> ing_temp = new ArrayList<>(ing);
+            ing_temp.retainAll(i.subList(1,i.size()));
             if (ing.containsAll(i.subList(1,i.size()))) {
                     Map<String, String> datum = new HashMap<>(2); // Create a temp placeholder
                     datum.put("name", i.get(0).toString()); // Stores the name, which has been assigned to the first index for all drinks
@@ -124,6 +126,14 @@ public class result extends AppCompatActivity {
                     datum.put("ing", temp.substring(1,temp.length()-1)); // Removes the brackets that come included with the array .toString()
                     data.add(datum);
                 }
+            //else if(ing.contains(i.subList(1,i.size()))){
+            else if(!ing_temp.isEmpty()){
+                Map<String, String> datum = new HashMap<>(2); // Create a temp placeholder
+                datum.put("name", "Suggestion: " + i.get(0).toString()); // Stores the name, which has been assigned to the first index for all drinks
+                String temp = i.subList(1,i.size()).toString(); // Stores the remainder of the list, designated as ingredients
+                datum.put("ing", temp.substring(1,temp.length()-1)); // Removes the brackets that come included with the array .toString()
+                data.add(datum);
+            }
             }
 
         // Creates a fake drink to act as an error message in the list if no matches were found/no ing were selected
