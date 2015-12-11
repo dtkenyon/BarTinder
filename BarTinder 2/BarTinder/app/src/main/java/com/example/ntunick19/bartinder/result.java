@@ -54,6 +54,7 @@ public class result extends AppCompatActivity {
         ArrayList<String> ing = new ArrayList<>();
         ArrayList<List<String>> recipes = new ArrayList<>();
         List<Map<String, String>> data = new ArrayList<>();
+        List<Map<String, String>> data_temp = new ArrayList<>();
 
         // Combine all user input into one
         ing.addAll(mixers);
@@ -64,8 +65,6 @@ public class result extends AppCompatActivity {
         //     into an ArrayList of Lists of Strings.
         // In the future, it would be great to just parse the xml and pull the relevant
         //     data, but this will do for now. Sorry.
-        List<String> gt = Arrays.asList(getResources().getStringArray(R.array.GinandTonic));
-        recipes.add(gt);
         List<String> abd = Arrays.asList(getResources().getStringArray(R.array.ABadDecision));
         recipes.add(abd);
         List<String> ab = Arrays.asList(getResources().getStringArray(R.array.AlabamaSlammer));
@@ -82,6 +81,10 @@ public class result extends AppCompatActivity {
         recipes.add(cl);
         List<String> ds = Arrays.asList(getResources().getStringArray(R.array.DarkandStormy));
         recipes.add(ds);
+        List<String> aa = Arrays.asList(getResources().getStringArray(R.array.FireCider));
+        recipes.add(aa);
+        List<String> gt = Arrays.asList(getResources().getStringArray(R.array.GinandTonic));
+        recipes.add(gt);
         List<String> gb = Arrays.asList(getResources().getStringArray(R.array.GinBuck));
         recipes.add(gb);
         List<String> gbt = Arrays.asList(getResources().getStringArray(R.array.GinBucket));
@@ -112,8 +115,6 @@ public class result extends AppCompatActivity {
         recipes.add(wr);
         List<String> ww = Arrays.asList(getResources().getStringArray(R.array.WooWoo));
         recipes.add(ww);
-        List<String> aa = Arrays.asList(getResources().getStringArray(R.array.FireCider));
-        recipes.add(aa);
 
         // Checks all the input data against the recipe database to find any matches.
         for(List i : recipes) {
@@ -132,7 +133,7 @@ public class result extends AppCompatActivity {
                 datum.put("name", "Suggestion: " + i.get(0).toString()); // Stores the name, which has been assigned to the first index for all drinks
                 String temp = i.subList(1,i.size()).toString(); // Stores the remainder of the list, designated as ingredients
                 datum.put("ing", temp.substring(1,temp.length()-1)); // Removes the brackets that come included with the array .toString()
-                data.add(datum);
+                data_temp.add(datum);
             }
             }
 
@@ -144,6 +145,7 @@ public class result extends AppCompatActivity {
             data.add(datum);
         }
 
+        data.addAll(data_temp);
         return data;
     }
 
